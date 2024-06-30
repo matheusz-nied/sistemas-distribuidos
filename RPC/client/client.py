@@ -1,7 +1,7 @@
 import xmlrpc.client
 
 server_url = "http://localhost:8000"
-proxy = xmlrpc.client.ServerProxy(server_url)
+proxyRPC = xmlrpc.client.ServerProxy(server_url)
 
 def show_menu():
     print("Escolha uma operação:")
@@ -22,19 +22,19 @@ while True:
 
     if choice == '1':
         x, y = get_numbers()
-        result = proxy.add(x, y)
+        result = proxyRPC.add(x, y)
         print(f"Resultado: {x} + {y} = {result}")
     elif choice == '2':
         x, y = get_numbers()
-        result = proxy.subtract(x, y)
+        result = proxyRPC.subtract(x, y)
         print(f"Resultado: {x} - {y} = {result}")
     elif choice == '3':
         x, y = get_numbers()
-        result = proxy.multiply(x, y)
+        result = proxyRPC.multiply(x, y)
         print(f"Resultado: {x} * {y} = {result}")
     elif choice == '4':
         x, y = get_numbers()
-        result = proxy.divide(x, y)
+        result = proxyRPC.divide(x, y)
         print(f"Resultado: {x} / {y} = {result}")
     elif choice == '5':
         print("Saindo...")
